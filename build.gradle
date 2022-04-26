@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.10'
+}
+
+javafx {
+    version = "17.0.1"
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+    implementation group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.1'
+
+    implementation group: 'com.sun.xml.bind', name: 'jaxb-core', version: '2.3.0.1'
+    implementation group: 'com.sun.xml.bind', name: 'jaxb-impl', version: '2.3.1'
+    implementation("com.google.guava:guava:31.1-jre")
+}
+
+test {
+    useJUnitPlatform()
+}
